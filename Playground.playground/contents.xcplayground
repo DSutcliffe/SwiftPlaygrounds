@@ -3,6 +3,7 @@
     <pages>
         <page name='Accessibility Speech Correction'/>
         <page name='closures'/>
+        <page name='Closures2'/>
         <page name='displayUIComponents'/>
         <page name='filterArray'/>
         <page name='functionWithInitialValueSet'/>
@@ -22,5 +23,6 @@
         <page name='trailingClosure'/>
         <page name='TypeCasting'/>
         <page name='typeParameters&lt;T&gt;'/>
+        <page name='CompletionHandler_Block'/>
     </pages>
 </playground>
