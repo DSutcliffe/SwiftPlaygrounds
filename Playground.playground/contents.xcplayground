@@ -22,8 +22,9 @@
         <page name='strongReferenceCycles'/>
         <page name='switch-ifCaseLet'/>
         <page name='trailingClosure'/>
+        <page name='TypeCasting-Simple'/>
         <page name='TypeCasting'/>
         <page name='typeParameters&lt;T&gt;'/>
-        <page name='TypeCasting-Simple'/>
+        <page name='ScratchPad'/>
     </pages>
 </playground>

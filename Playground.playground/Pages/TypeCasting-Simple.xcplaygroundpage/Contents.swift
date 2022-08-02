@@ -62,17 +62,39 @@ class LiveAlbum: Album {
     }
 }
 
+/// Because any instance of StudioAlbum or LiveAlbum are inherited from Album they can be treated as either album or StudioAlbum/LiveAlbum
+/// it's both at the same time. This is "Polymorphism"
 var taylorSwift = StudioAlbum(name: "Taylor Swift", studio: "The Castles Studios")
 var fearless = StudioAlbum(name: "Speak Now", studio: "Aimeeland Studio")
 var iTunesLive = LiveAlbum(name: "iTunes Live from SoHo", location: "New York")
 
+/// Create an array that holds only Albums. 2 are StudioAlbums and 1 is a LiveAlbum but fine as they are all descended from Album class never lose their original class
 var allAlbums1: [Album] = [taylorSwift, fearless, iTunesLive]
+/// Create an array that holds only Albums. 2 x StudioAlbums
 var allAlbums2: [Album] = [taylorSwift, fearless]
 
-//for album in allAlbums1 {
-//    print(album.getPerformance())
-//}
+/// Further Demonstration
+/// Uses the override version getPerformance depending on the subclass in question
+/// Object can work as its class and its parent class at the same time
+print("\n")
+for album in allAlbums1 {
+    /// Here we know allAlbums holds the type Album yet really it contains StudioAlbums and a Live Album, swift doesnt know that
+    /// If we tried to print(album.studio) Swift will refuse to build, Only StudioAlbums objects have that property, and it thinks we have regular Albums
+    /// To get over this we require Typecasting
+    print(album.getPerformance())
+}
 
+/// Typecasting
+print("\n")
+for album in allAlbums1 {
+    /// Swift will make studioAlbum have data type optional StudioAlbum
+    /// The conversion might work, if not, you have nil
+    /// Use if let...
+    let studioAlbum = album as? StudioAlbum
+    print(studioAlbum)
+}
+
+/// Here we can pull out paramters from within the subclass
 print("\n")
 for album in allAlbums1 {
     print(album.getPerformance())
