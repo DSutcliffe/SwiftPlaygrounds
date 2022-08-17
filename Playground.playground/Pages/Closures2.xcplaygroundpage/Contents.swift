@@ -1,34 +1,18 @@
-import UIKit
-
-/// 01
-func greetUser() {
-    print("01: Hi there!")
+func calculator(calculatorNo1: Int, calculatorNo2: Int, calculatorOperation: (Int, Int) -> Int) -> Int {
+    return calculatorOperation(calculatorNo1, calculatorNo2)
 }
 
-greetUser()
-
-var greetCopy = greetUser   // greetCopy is now a funtion () -> Void - We are taking a copy of the funtion greetUser
-print(greetCopy)
-greetCopy()
-
-///
-print("\n")
-
-/// 02
-func getUserData(for id: Int) -> String {
-    if id == 1989 {
-        return "02: Taylor Swift"
-    } else {
-        return "Anonymous"
-    }
+func add(addNo1: Int, addNo2: Int) -> Int {
+    return addNo1 + addNo2
+//    addNo1 + addNo2    // Could write as this as a return is inferred
 }
 
-let data: (Int) -> String = getUserData
-let user = data(1989)
-print(user)
+/// Passes "add" as a function
+let sumPassingFunctionAsParam = calculator(calculatorNo1: 2, calculatorNo2: 3, calculatorOperation: add)
+print ("sumPassingFunctionAsParam: \(sumPassingFunctionAsParam)")
 
-///
-print("\n")
-
-/// 03
-
+/// Write "add" function as a closure (Int, Int) -> Int so "add" funtion not required
+let sumUsingAddAsClosure = calculator(calculatorNo1: 2, calculatorNo2: 3) { anyParamName1, anyParamName2 in
+    anyParamName1 + anyParamName2   // This is the same code that would be run in the body of a function if that were called instead!
+}
+print("sumUsingAddAsClosure: \(sumUsingAddAsClosure)")
