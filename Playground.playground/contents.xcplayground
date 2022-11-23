@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' executeOnSourceChanges='true' importAppTypes='true'>
     <pages>
+        <page name='CoopLoginViewControllerBeforeRefactor'/>
         <page name='Accessibility Speech Correction'/>
         <page name='Class-Subclass-CopyClass'/>
+        <page name='classVsStruct'/>
         <page name='closures'/>
         <page name='Closures2'/>
+        <page name='closure-PassAsParameter'/>
+        <page name='closureAsCompletionHandler'/>
         <page name='CompletionHandler_Block'/>
         <page name='displayUIComponents'/>
         <page name='filterArray'/>
+        <page name='FunctionAsVarOrLet'/>
         <page name='FunctionParams-InternalExternal'/>
         <page name='functionWithInitialValueSet'/>
         <page name='ifElseInParameter'/>
@@ -16,16 +21,14 @@
         <page name='map-compactMap-flatMap'/>
         <page name='MultipleIfConditions'/>
         <page name='nonBreakingHyphen'/>
-        <page name='passClosureAsParameter'/>
         <page name='sequenceParameter'/>
         <page name='StringIndex1'/>
         <page name='StringIndex2'/>
         <page name='strongReferenceCycles'/>
         <page name='switch-ifCaseLet'/>
-        <page name='trailingClosure'/>
         <page name='TypeCasting-Simple'/>
         <page name='TypeCasting'/>
         <page name='typeParameters&lt;T&gt;'/>
-        <page name='ScratchPad'/>
+        <page name='!PG'/>
     </pages>
 </playground>
