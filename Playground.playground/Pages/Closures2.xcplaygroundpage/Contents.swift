@@ -2,7 +2,7 @@ func calculator(calculatorNo1: Int, calculatorNo2: Int, calculatorOperation: (In
     return calculatorOperation(calculatorNo1, calculatorNo2)
 }
 
-func add(addNo1: Int, addNo2: Int) -> Int {
+func add(addNo1: Int, addNo2: Int) -> Int { // function of type: (Int, Int) -> Int
     return addNo1 + addNo2
 //    addNo1 + addNo2    // Could write as this as a return is inferred
 }
@@ -11,8 +11,8 @@ func add(addNo1: Int, addNo2: Int) -> Int {
 let sumPassingFunctionAsParam = calculator(calculatorNo1: 2, calculatorNo2: 3, calculatorOperation: add)
 print ("sumPassingFunctionAsParam: \(sumPassingFunctionAsParam)")
 
-/// Write "add" function as a closure (Int, Int) -> Int so "add" funtion not required
-let sumUsingAddAsClosure = calculator(calculatorNo1: 2, calculatorNo2: 3) { anyParamName1, anyParamName2 in
+/// Write "add" function as a "trailing" closure (Int, Int) -> Int so "add" funtion not required
+let sumUsingAddAsClosure = calculator(calculatorNo1: 2, calculatorNo2: 3) { anyParamName1, anyParamName2 in // These params are what you would use in the function input params (eg. addNo1 & addNo2 above)
     anyParamName1 + anyParamName2   // This is the same code that would be run in the body of a function if that were called instead!
 }
 print("sumUsingAddAsClosure: \(sumUsingAddAsClosure)")

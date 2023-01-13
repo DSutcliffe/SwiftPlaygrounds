@@ -96,3 +96,22 @@ rectStruct1.area()
 rectStruct1.scaleBy(value: 5)   // cannot modify a let constant in the case of a value type. Values never change, variables do
 rectStruct1.area()
 rectStruct2.area()
+
+
+
+import UIKit
+import PlaygroundSupport                                // Code to make asynchronous code work in playground #1
+PlaygroundPage.current.needsIndefiniteExecution = true  // Code to make asynchronous code work in playground #2
+
+
+func doSomething() {
+    DispatchQueue.main.asyncAfter(deadline: .now()) {
+        print("A")
+    }
+    DispatchQueue.main.async {
+        print("B")
+    }
+    print("C")
+}
+
+doSomething()
