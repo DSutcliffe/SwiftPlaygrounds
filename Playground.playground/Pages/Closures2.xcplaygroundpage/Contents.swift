@@ -16,3 +16,8 @@ let sumUsingAddAsClosure = calculator(calculatorNo1: 2, calculatorNo2: 3) { anyP
     anyParamName1 + anyParamName2   // This is the same code that would be run in the body of a function if that were called instead!
 }
 print("sumUsingAddAsClosure: \(sumUsingAddAsClosure)")
+
+
+/// Using anonymous parameters
+let sumUsingAddAsClosureAnonParam = calculator(calculatorNo1: 2, calculatorNo2: 3) { $0 + $1 }
+print("sumUsingAddAsClosureAnonParam: \(sumUsingAddAsClosureAnonParam)")

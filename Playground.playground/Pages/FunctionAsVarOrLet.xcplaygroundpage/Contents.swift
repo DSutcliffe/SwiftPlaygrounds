@@ -1,25 +1,32 @@
 import UIKit
 
-/// 01
-func greetUser() {
+/// ************************************************************************************************************************************
+/// 01.
+/// ************************************************************************************************************************************
+func greetUser1() {
     print("01: Hi there!")
 }
 
-greetUser()
+greetUser1()
 
-var greetCopy = greetUser   // greetCopy is now a funtion () -> Void - We are taking a copy of the funtion greetUser
-print(greetCopy)
+/// ************************************************************************************************************************************
+/// 02.
+/// ************************************************************************************************************************************
+func greetUser2() {
+    print("02: Hi there!")
+}
+
+var greetCopy = greetUser2   // greetCopy is now a funtion () -> Void - We are taking a copy of the funtion greetUser
 greetCopy()
 
-///
-print("\n")
-
-/// 02
+/// ************************************************************************************************************************************
+/// 03.
+/// ************************************************************************************************************************************
 func getUserData(for id: Int) -> String {
     if id == 1989 {
-        return "02: Taylor Swift"
+        return "03: Taylor Swift"
     } else {
-        return "Anonymous"
+        return "03: Anonymous"
     }
 }
 
@@ -27,7 +34,3 @@ let data: (Int) -> String = getUserData
 let user = data(1989)
 print(user)
 
-///
-print("\n")
-
-/// 03

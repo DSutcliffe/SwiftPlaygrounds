@@ -14,12 +14,12 @@ class Car: Vehicle {
     
     init(isElectric: Bool, isConvertible: Bool) {
         self.isConvertible = isConvertible
-        super.init(isElectric: isElectric)
+        super.init(isElectric: isElectric)      // isElectric initialised in Vehicle Parent Class
     }
 }
 
 let teslaX = Car(isElectric: true, isConvertible: false)
-/// ************************************************************************************************************************************
+print(teslaX.isElectric)
 
 /// ************************************************************************************************************************************
 /// 02. Updating the same instance of a Class vs a COPY of a class
@@ -43,4 +43,3 @@ user3.username = "Taylor"   // updates the copy rather than the class!
 print(user1.username)
 print(user2.username)
 print(user3.username)
-/// ************************************************************************************************************************************

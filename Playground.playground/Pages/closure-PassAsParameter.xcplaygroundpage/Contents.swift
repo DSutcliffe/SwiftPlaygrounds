@@ -15,7 +15,7 @@ let filteredList1 = filterWithPredicateClosure(closure: { (num) in
 }, numbers: [1, 2, 3, 4, 5, 10])
 print("[H] \(filteredList1)")
 
-func greaterThanTwo(value: Int) -> Bool {
+func greaterThanTwo(value: Int) -> Bool {   // this is the same as filteredList1 but written as its own function, not written as a closure in the call
     return value > 2
 }
 

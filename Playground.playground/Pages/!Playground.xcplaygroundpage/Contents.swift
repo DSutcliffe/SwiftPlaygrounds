@@ -114,4 +114,33 @@ func doSomething() {
     print("C")
 }
 
-doSomething()
+
+// CoopLoginViewController
+// #98
+
+viewModel.showSessionEndedScreen = {
+    self.showSessionEndedScreen()
+}
+
+func showSessionEndedScreen() {
+    if let window = UIApplication.shared.delegate?.window as? UIWindow {
+        let viewModel = SessionEndedViewModel()
+        let viewController = SessionEndedViewController(viewModel: viewModel)
+        let navController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+    }
+}
+
+
+// RejectLoginViewModel
+// #62
+
+if let window = UIApplication.shared.delegate?.window as? UIWindow {
+    let viewModel = SessionEndedViewModel()
+    let viewController = SessionEndedViewController(viewModel: viewModel)
+    let navController = UINavigationController(rootViewController: viewController)
+    window.rootViewController = navController
+    window.makeKeyAndVisible()
+}
+

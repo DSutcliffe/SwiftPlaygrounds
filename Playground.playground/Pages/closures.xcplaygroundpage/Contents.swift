@@ -66,7 +66,7 @@ calculator5(n1: 2, n2: 3, operation: { (no1, no2) in
 })
 
 /// Step 6:
-/// Closures are able to provide anonymus paramater names - $0 = 1st param, $1 = 2nd param....
+/// Closures are able to provide anonymous paramater names - $0 = 1st param, $1 = 2nd param....
 func calculator6(n1: Int, n2: Int, operation: (Int, Int) -> Int ) -> Int {
     return operation(n1, n2)
 }
