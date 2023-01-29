@@ -12,9 +12,9 @@
         <page name='displayUIComponents'/>
         <page name='filterArray'/>
         <page name='FunctionAsVarOrLet'/>
-        <page name='FunctionParams-InternalExternal'/>
+        <page name='FunctionParams-ExternalInternal'/>
         <page name='functionWithInitialValueSet'/>
-        <page name='ifElseInParameter'/>
+        <page name='ifElseInParameterTernaryOperator'/>
         <page name='ifLet'/>
         <page name='inOut'/>
         <page name='map-compactMap-flatMap'/>
@@ -28,6 +28,6 @@
         <page name='TypeCasting-Simple'/>
         <page name='TypeCasting'/>
         <page name='typeParameters&lt;T&gt;'/>
-        <page name='!PG'/>
+        <page name='!Playground'/>
     </pages>
 </playground>
