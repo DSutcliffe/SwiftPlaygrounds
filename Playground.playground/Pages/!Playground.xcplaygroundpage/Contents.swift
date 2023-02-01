@@ -144,3 +144,36 @@ if let window = UIApplication.shared.delegate?.window as? UIWindow {
     window.makeKeyAndVisible()
 }
 
+
+
+func rejectConsent(completion: (() -> Void)?) {
+    ConsentAcceptOrRejectRestClient().consentReject(consentChallenge: CoopOpenBankingData.Common.consentChallengeToken) { [weak self] result in
+        switch result {
+        case .success(let data):
+            CoopOpenBankingData.Common.redirectToTPPUrl = data.redirect_to
+            completion?()
+        case .failure:
+//                self?.handleErrors(with: error, isRejected: true)   // TODO: navigate to error screen implemented in MSPR-81
+            self?.stopLoader()
+            self?.group.leave()
+        }
+    }
+}
+
+private func handleErrors(with restClientErrors: RestClientError, isRejected: Bool) {
+    switch restClientErrors {
+    case .error503, .error401:
+        let message = String(format: ConsentAssets().returnToTPPOrMobileBankingMessage.replacingOccurrences(of: "%s", with: "%@"), CoopOpenBankingData.Common.cbpiiTradingName())
+        showErrorAlert?(ConsentAssets().sessionEndedErrorTitle, message, ConsentAssets().continueToMobileBanking, .continueToMobileBanking)
+//        case .offline:
+//            showErrorAlert?(ConsentAssets().errorTitle, ConsentAssets().noInternetErrorMessage, ConsentAssets().backCTATitle, .none)
+    default:
+        if isRejected {
+            self.delegate?.navigateToSessionEndedScreen()
+        }
+//            } else {
+//                let alertMessage = String(format: ConsentAssets().returnToTPPErrorMessage.replacingOccurrences(of: "%s", with: "%@"), CoopOpenBankingData.Common.cbpiiTradingName())
+//                let alertActionCTA = String(format: ConsentAssets().returnToTPPErrorCTATitle.replacingOccurrences(of: "%s", with: "%@"), CoopOpenBankingData.Common.cbpiiTradingName())
+//                showErrorAlert?(ConsentAssets().errorTitle, alertMessage, alertActionCTA, .returnToTPP)
+//            }
+    }
