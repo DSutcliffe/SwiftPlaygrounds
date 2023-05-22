@@ -20,6 +20,7 @@
         <page name='map-compactMap-flatMap'/>
         <page name='MultipleIfConditions'/>
         <page name='nonBreakingHyphen'/>
+        <page name='ProtocolConformToProtocol'/>
         <page name='ReplaceOccurrences'/>
         <page name='sequenceParameter-RangeOperator'/>
         <page name='StringIndex1'/>

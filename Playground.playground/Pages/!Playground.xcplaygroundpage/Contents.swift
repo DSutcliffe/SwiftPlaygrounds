@@ -115,65 +115,6 @@ func doSomething() {
 }
 
 
-// CoopLoginViewController
-// #98
+client_id=35c73fd2-3b92-449d-a8e6-8aca93d702ff&redirect_uri=https://ob.retailonlinedevikscluster-46e544cd60b778e71a17cbb7b32c6e71-0000.eu-gb.containers.appdomain.cloud/ob-test-client/index.html&response_type=code&scope=PISP+offline&state=3nJR8ai76478874928974&login_hint=coop&display=d01509a0-f7cf-4b77-93ff-ec169955fbb7" | base64
 
-viewModel.showSessionEndedScreen = {
-    self.showSessionEndedScreen()
-}
-
-func showSessionEndedScreen() {
-    if let window = UIApplication.shared.delegate?.window as? UIWindow {
-        let viewModel = SessionEndedViewModel()
-        let viewController = SessionEndedViewController(viewModel: viewModel)
-        let navController = UINavigationController(rootViewController: viewController)
-        window.rootViewController = navController
-        window.makeKeyAndVisible()
-    }
-}
-
-
-// RejectLoginViewModel
-// #62
-
-if let window = UIApplication.shared.delegate?.window as? UIWindow {
-    let viewModel = SessionEndedViewModel()
-    let viewController = SessionEndedViewController(viewModel: viewModel)
-    let navController = UINavigationController(rootViewController: viewController)
-    window.rootViewController = navController
-    window.makeKeyAndVisible()
-}
-
-
-
-func rejectConsent(completion: (() -> Void)?) {
-    ConsentAcceptOrRejectRestClient().consentReject(consentChallenge: CoopOpenBankingData.Common.consentChallengeToken) { [weak self] result in
-        switch result {
-        case .success(let data):
-            CoopOpenBankingData.Common.redirectToTPPUrl = data.redirect_to
-            completion?()
-        case .failure:
-//                self?.handleErrors(with: error, isRejected: true)   // TODO: navigate to error screen implemented in MSPR-81
-            self?.stopLoader()
-            self?.group.leave()
-        }
-    }
-}
-
-private func handleErrors(with restClientErrors: RestClientError, isRejected: Bool) {
-    switch restClientErrors {
-    case .error503, .error401:
-        let message = String(format: ConsentAssets().returnToTPPOrMobileBankingMessage.replacingOccurrences(of: "%s", with: "%@"), CoopOpenBankingData.Common.cbpiiTradingName())
-        showErrorAlert?(ConsentAssets().sessionEndedErrorTitle, message, ConsentAssets().continueToMobileBanking, .continueToMobileBanking)
-//        case .offline:
-//            showErrorAlert?(ConsentAssets().errorTitle, ConsentAssets().noInternetErrorMessage, ConsentAssets().backCTATitle, .none)
-    default:
-        if isRejected {
-            self.delegate?.navigateToSessionEndedScreen()
-        }
-//            } else {
-//                let alertMessage = String(format: ConsentAssets().returnToTPPErrorMessage.replacingOccurrences(of: "%s", with: "%@"), CoopOpenBankingData.Common.cbpiiTradingName())
-//                let alertActionCTA = String(format: ConsentAssets().returnToTPPErrorCTATitle.replacingOccurrences(of: "%s", with: "%@"), CoopOpenBankingData.Common.cbpiiTradingName())
-//                showErrorAlert?(ConsentAssets().errorTitle, alertMessage, alertActionCTA, .returnToTPP)
-//            }
-    }
+https://bank74.co-operativebanktest.co.uk/openbanking/oauthRedirect?data=Y2xpZW50X2lkPTM1YzczZmQyLTNiOTItNDQ5ZC1hOGU2LThhY2E5M2Q3MDJmZiZyZWRpcmVjdF91cmk9aHR0cHM6Ly9vYi5yZXRhaWxvbmxpbmVkZXZpa3NjbHVzdGVyLTQ2ZTU0NGNkNjBiNzc4ZTcxYTE3Y2JiN2IzMmM2ZTcxLTAwMDAuZXUtZ2IuY29udGFpbmVycy5hcHBkb21haW4uY2xvdWQvb2ItdGVzdC1jbGllbnQvaW5kZXguaHRtbCZyZXNwb25zZV90eXBlPWNvZGUmc2NvcGU9UElTUCtvZmZsaW5lJnN0YXRlPTNuSlI4YWk3NjQ3ODg3NDkyODk3NCZsb2dpbl9oaW50PWNvb3AmZGlzcGxheT1kMDE1MDlhMC1mN2NmLTRiNzctOTNmZi1lYzE2OTk1NWZiYjcK
