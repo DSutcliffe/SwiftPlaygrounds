@@ -33,6 +33,9 @@ func secondTest(completion: @escaping (String) -> Void) {
 }
 
 secondTest { completionStringReturned in
+    // An "API Call" is performed in secondTest function and a value is returned...
+    // Based on the value returned from the API call, a string is provided via completion("completionStringReturned")
+    
     if completionStringReturned == "callSuccessful" {
         print("API call was successful")
     } else {
