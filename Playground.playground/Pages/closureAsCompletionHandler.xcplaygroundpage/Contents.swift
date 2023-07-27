@@ -22,19 +22,20 @@ fetchI18File { i18Success in
 
 
 func secondTest(completion: @escaping (String) -> Void) {
-    let a = "hell"  // Pretend we have done an API call to get data
+    let apiReturn = "fail"  // Pretend we have done an API call and success/fail returned
+//    let apiReturn = "success"
     
-    if a == "hello" {
-        completion("Olla")
+    if apiReturn == "success" {
+        completion("callSuccessful")
     } else {
-        completion("Ciao")
+        completion("callFailure")
     }
 }
 
-secondTest { myString in
-    if myString == "Olla" {
-        print("Olla")
+secondTest { completionStringReturned in
+    if completionStringReturned == "callSuccessful" {
+        print("API call was successful")
     } else {
-        print("Ciao")
+        print("API call failed!")
     }
 }
