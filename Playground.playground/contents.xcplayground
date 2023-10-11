@@ -2,6 +2,7 @@
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' executeOnSourceChanges='true' importAppTypes='true'>
     <pages>
         <page name='Accessibility Speech Correction'/>
+        <page name='AsyncAfter'/>
         <page name='Class-Subclass-CopyClass'/>
         <page name='classVsStruct'/>
         <page name='closures'/>
@@ -23,6 +24,7 @@
         <page name='ProtocolConformToProtocol'/>
         <page name='ReplaceOccurrences'/>
         <page name='sequenceParameter-RangeOperator'/>
+        <page name='Static-Mutating'/>
         <page name='StringIndex1'/>
         <page name='StringIndex2'/>
         <page name='strongReferenceCycles'/>
