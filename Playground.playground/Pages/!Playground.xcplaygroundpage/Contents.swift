@@ -1,61 +1,36 @@
 // Retain Cycle - Memory Leak
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show RedController",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(handleShowRedController))
-    }
+class Course {
+    private var students = [Student]()
     
-    @objc func handleShowRedController() {
-        navigationController?.pushViewController(RedController(), animated: true)
+    init() { print("Course initialised") }
+    deinit { print("Course de-initialised") }
+    
+    func enroll(_ student: Student) {
+        students.append(student)
     }
 }
 
-class RedController: UITableViewController {
+class Student {
+    private var course: Course?         // If the reference is not set to weak, a STRONG reference is retained and so nothing gets de-initialised
+//    private weak var course: Course?    // WEAK reference allows classes to be de-initialised
+    private var name: String
     
-    /// Using "deinit" with a "print" will show us when the controller/class has been de-initialised/removed from memory
-    deinit {
-        print("OS Reclaiming memory for RedController")
+    init(course: Course, name: String) {
+        print("Student initialised")
+        self.course = course
+        self.name = name
     }
     
-    // MARK: 1
-    /// No links to other classes, therefore no STRONG or WEAK references
-    
-    // MARK: 2 & 3
-    /// Adding a reference to another class CAN create a STRONG link (STRONG circular reference) between RedController & Service, depending on variable declaration
-    let service = Service()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.backgroundColor = .red
-        
-        /// MARK: 1 & 3- Comment Out
-        /// MARK: 2 - Un-Comment
-        // MARK: 2 STRONG Reference
-        service.redControllerStrong = self
-        
-        /// MARK: 1 & 2- Comment Out
-        /// MARK: 3 - Un-Comment
-        // MARK: 3 WEAK Reference
-        service.redControllerWeak = self
-    }
+    deinit { print("Student de-initialised") }
 }
 
-class Service {
-    
-    // MARK: 1
-    /// Does not have reference to this class
+var computerScience: Course? = Course()                                 // A Course() reference gets initialised
+var danny: Student? = Student(course: computerScience!, name: "Danny")  // A Student() reference gets initialised
 
-    // MARK: 2 STRONG Reference
-    var redControllerStrong: RedController?
-    
-    // MARK: 3 WEAK Reference
-    weak var redControllerWeak: RedController?
-}
+computerScience?.enroll(danny!) // Example of when a student enrolls
+
+computerScience = nil   // Should de-initialise computerScience Course() reference
+danny = nil             // Should de-initialise danny Student() reference
