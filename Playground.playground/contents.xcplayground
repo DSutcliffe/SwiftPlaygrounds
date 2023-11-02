@@ -34,5 +34,6 @@
         <page name='TypeCasting'/>
         <page name='typeParameters&lt;T&gt;'/>
         <page name='!Playground'/>
+        <page name='RetainCycele-WeakSelf'/>
     </pages>
 </playground>
