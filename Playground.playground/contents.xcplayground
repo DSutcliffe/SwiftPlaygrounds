@@ -24,6 +24,7 @@
         <page name='ProtocolConformToProtocol'/>
         <page name='ReplaceOccurrences'/>
         <page name='RetainCycle-MemoryLeak'/>
+        <page name='RetainCycele-WeakSelf'/>
         <page name='sequenceParameter-RangeOperator'/>
         <page name='Static-Mutating'/>
         <page name='StringIndex1'/>
@@ -34,6 +35,5 @@
         <page name='TypeCasting'/>
         <page name='typeParameters&lt;T&gt;'/>
         <page name='!Playground'/>
-        <page name='RetainCycele-WeakSelf'/>
     </pages>
 </playground>
