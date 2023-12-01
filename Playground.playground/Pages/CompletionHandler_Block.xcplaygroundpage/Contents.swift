@@ -6,11 +6,11 @@ PlaygroundPage.current.needsIndefiniteExecution = true  // Code to make asynchro
 /// A Completion Handler (or Completion Block) is a block of code that will be executed after the main task is completed!
 
 /// ************************************************************************************************************************************
-/// 01: SampleFunction1 will run the 2 print statements in the wrong order due to the time delay of the DispatchQueue
+/// 01: SampleFunction1 will run the two print statements in the wrong order due to the time delay of the DispatchQueue
 /// ************************************************************************************************************************************
 //func sampleFunction1() {
 //    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-//        print("SF1: Response from delayed sample funtion")
+//        print("SF1: Response from delayed sample function")
 //    }
 //    print("SF1: After the response from the delayed sample function")
 //}
@@ -19,11 +19,11 @@ PlaygroundPage.current.needsIndefiniteExecution = true  // Code to make asynchro
 /// ************************************************************************************************************************************
 
 /// ************************************************************************************************************************************
-/// 02: By adding a completion handler the completion block will run once DispacthQueue has completed ie. after 2 seconds the completion block will execute
+/// 02: By adding a completion handler the completion block will run once DispatchQueue has completed ie. after 2 seconds the completion block will execute
 /// ************************************************************************************************************************************
 //func sampleFunction2(completion: @escaping () -> Void) {
 //    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-//        print("SF2: Response from delayed sample funtion")
+//        print("SF2: Response from delayed sample function")
 //        completion()
 //    }
 //}
@@ -42,7 +42,7 @@ PlaygroundPage.current.needsIndefiniteExecution = true  // Code to make asynchro
 /// ************************************************************************************************************************************
 //func sampleFunction3(completion: @escaping (String) -> Void) {
 //    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-//        print("SF3: Response from delayed sample funtion")
+//        print("SF3: Response from delayed sample function")
 //        completion("SF3: After the response from the delayed sample function")
 //    }
 //}
