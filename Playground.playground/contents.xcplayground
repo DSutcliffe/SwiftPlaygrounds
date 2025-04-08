@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' buildActiveScheme='true' executeOnSourceChanges='true' importAppTypes='true'>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='Accessibility Speech Correction'/>
         <page name='AsyncAfter'/>
@@ -33,7 +33,6 @@
         <page name='switch-ifCaseLet'/>
         <page name='TypeCasting-Simple'/>
         <page name='TypeCasting'/>
-        <page name='typeParameters&lt;T&gt;'/>
         <page name='!Playground'/>
     </pages>
 </playground>
