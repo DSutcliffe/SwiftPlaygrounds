@@ -3,28 +3,50 @@ func filterWithPredicateClosure(closure: (Int) -> Bool, numbers: [Int]) -> [Int]
     var filterNumbers = [Int]()
     
     for num in numbers {
-        if closure(num) {
-            filterNumbers.append(num)
+        if closure(num) {               // Closure expects an INT Parameter ("num" from looping array, "value" in closure/function) and returns a Bool
+            filterNumbers.append(num)   // Append to array if closure/function is true
         }
     }
     return filterNumbers
 }
 
-let filteredList1 = filterWithPredicateClosure(closure: { (num) in
-    return num > 2
+/// ************************************************************************************************************************************
+/// Filtered List: 01
+/// ************************************************************************************************************************************
+let filteredList1 = filterWithPredicateClosure(closure: { (value) in    // Parenthesis are not required for params in the closure but look better with multiple parameters
+    return value > 2
 }, numbers: [1, 2, 3, 4, 5, 10])
-print("[H] \(filteredList1)")
+print("[FL1] \(filteredList1)")
+/// ====================================================================================================================================
+/// [FL1] [3, 4, 5, 10]
+/// ====================================================================================================================================
 
-func greaterThanTwo(value: Int) -> Bool {   // this is the same as filteredList1 but written as its own function, not written as a closure in the call
+/// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/// These functions replace writing the closure syntax in a call in order to make functions more dynamic/re-usable
+/// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+func greaterThanTwo(value: Int) -> Bool {   // This is the same as writing the closure in filteredList1
     return value > 2
 }
 
 func divisibleByFive(value: Int) -> Bool {
     return value % 5 == 0
 }
+/// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+/// ************************************************************************************************************************************
+/// Filtered List: 02
+/// ************************************************************************************************************************************
 let filteredList2 = filterWithPredicateClosure(closure: greaterThanTwo, numbers: [1, 2, 3, 4, 5, 10])
-print("[H] \(filteredList2)")
+print("[FL2] \(filteredList2)")
+/// ====================================================================================================================================
+/// [FL2] [3, 4, 5, 10]
+/// ====================================================================================================================================
 
+/// ************************************************************************************************************************************
+/// Filtered List: 03
+/// ************************************************************************************************************************************
 let filteredList3 = filterWithPredicateClosure(closure: divisibleByFive, numbers: [1, 2, 3, 4, 5, 10])
-print("[H] \(filteredList3)")
+print("[FL3] \(filteredList3)")
+/// ====================================================================================================================================
+/// [FL3] [5, 10]
+/// ====================================================================================================================================
