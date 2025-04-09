@@ -118,7 +118,7 @@ cString
 /// Replacing a string
 cString.replaceSubrange(cString.range(of: "his")!, with: "This")
 
-/// Seperate string with seperator
+/// Separate string with separator
 let words = cString.components(separatedBy: " ")
 let joinedString = words.joined(separator: " ")
 

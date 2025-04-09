@@ -172,6 +172,6 @@ blog3!.publish(post: Post(title: "Explaining weak and unowned self"))
 blog3 = nil
 blogger3 = nil
 
-/// [v1] -  The closure is retaining the blog while the blog is retaining the closure. Although everything seems fine with the count of 1, we don’t see the blog and publisher being deinitialized. This is because of the retain cycle and results in memory not being freed up.
+/// [v1] -  The closure is retaining the blog while the blog is retaining the closure. Although everything seems fine with the count of 1, we don’t see the blog and publisher being de-initialized. This is because of the retain cycle and results in memory not being freed up.
 
 /// [v2] - Adding a weak reference to our blog instance inside the onPublish method solves our retain cycle. The data is saved locally and all instances are released. No more retain cycles!

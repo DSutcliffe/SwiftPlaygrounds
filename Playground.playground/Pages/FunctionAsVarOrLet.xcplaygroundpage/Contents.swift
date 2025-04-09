@@ -16,7 +16,7 @@ func greetUser2() {
     print("02: Hi there!")
 }
 
-var greetCopy = greetUser2   // greetCopy is now a funtion () -> Void - We are taking a copy of the funtion greetUser
+var greetCopy = greetUser2   // greetCopy is now a function () -> Void - We are taking a copy of the function greetUser
 greetCopy()
 
 /// ************************************************************************************************************************************

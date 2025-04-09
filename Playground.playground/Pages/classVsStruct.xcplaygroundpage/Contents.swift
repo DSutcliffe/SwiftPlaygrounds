@@ -22,7 +22,7 @@ jayClass.name
 dannyClass.name
 
 // Struct - Value Type (Excel Sheet - Individual Copy)
-// Structs dont have inheritence!, Cant subClass
+// Structs don't have inheritance!, Cant subClass
 
 struct DeveloperStruct {
     var name: String?

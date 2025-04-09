@@ -11,9 +11,9 @@ func add1(no1: Int, no2: Int) -> Int {      // This function as a type would be:
 calculator1(n1: 2, n2: 3)
 
 /// Step 2:
-/// We have now added a 3rd parameter to the "calculator" function that requires a function type equal to the "Add" function in Step 1 (ie. takes 2 Int's as inputs and returns an Int as otput).
+/// We have now added a 3rd parameter to the "calculator" function that requires a function type equal to the "Add" function in Step 1 (ie. takes 2 Int's as inputs and returns an Int as output).
 func calculator2(n1: Int, n2: Int, operation: (Int, Int) -> Int ) -> Int {
-    /// We are now returning the result of the function specified in the "operation" aparameter
+    /// We are now returning the result of the function specified in the "operation" parameter
     return operation(n1, n2)
 }
 
@@ -24,13 +24,13 @@ func add2(no1: Int, no2: Int) -> Int {
 /// Calling the "calculator" function now requires we supply a function for "operation" parameter. Here, we use the "add" function.
 /// So, "calculator" will be called with 2 Int's as inputs (n1 & n2).
 /// "calculator" wants to return the result of the call to "operation", that being the "add" function.
-/// "opertaion/add" is called and passed the 2 Int's (n1 & n2) from "calculator" call as no1 & no2.
+/// "operation/add" is called and passed the 2 Int's (n1 & n2) from "calculator" call as no1 & no2.
 /// "add" returns the sum of no1 + no2 to "calculator".
 /// "calculator" returns the result from "operation/add" function it called
 calculator2(n1: 2, n2: 3, operation: add2)
 
 /// Step 3:
-/// Closures are Anonymus Functions
+/// Closures are Anonymous Functions
 func add3(no1: Int, no2: Int) -> Int {
     return no1 + no2
 }
@@ -66,7 +66,7 @@ calculator5(n1: 2, n2: 3, operation: { (no1, no2) in
 })
 
 /// Step 6:
-/// Closures are able to provide anonymous paramater names - $0 = 1st param, $1 = 2nd param....
+/// Closures are able to provide anonymous parameter names - $0 = 1st param, $1 = 2nd param....
 func calculator6(n1: Int, n2: Int, operation: (Int, Int) -> Int ) -> Int {
     return operation(n1, n2)
 }
@@ -75,7 +75,7 @@ let result6 = calculator6(n1: 2, n2: 3, operation: { $0 + $1 })
 print(result6)
 
 /// Step 7:
-/// Rule, If the last parameter in your function is a closure, you can elimante the last paramter name, close the input section and have the closure trailing - Trailing Closure
+/// Rule, If the last parameter in your function is a closure, you can eliminate the last parameter name, close the input section and have the closure trailing - Trailing Closure
 func calculator7(n1: Int, n2: Int, operation: (Int, Int) -> Int ) -> Int {
     return operation(n1, n2)
 }

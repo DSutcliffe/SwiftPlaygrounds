@@ -81,7 +81,7 @@ struct RectangleStruct {
         return width * height
     }
     
-    mutating func scaleBy(value: Int) {     // Add mutating - self (width & height) is immutable - ie. doesnt allow modifications to vars
+    mutating func scaleBy(value: Int) {     // Add mutating - self (width & height) is immutable - ie. doesn't allow modifications to vars
         width *= value
         height *= value
     }

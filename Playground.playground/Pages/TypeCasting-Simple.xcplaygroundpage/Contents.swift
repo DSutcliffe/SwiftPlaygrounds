@@ -78,7 +78,7 @@ var allAlbums2: [Album] = [taylorSwift, fearless]
 /// Object can work as its class and its parent class at the same time
 print("\n")
 for album in allAlbums1 {
-    /// Here we know allAlbums holds the type Album yet really it contains StudioAlbums and a Live Album, swift doesnt know that
+    /// Here we know allAlbums holds the type Album yet really it contains StudioAlbums and a Live Album, swift doesn't know that
     /// If we tried to print(album.studio) Swift will refuse to build, Only StudioAlbums objects have that property, and it thinks we have regular Albums
     /// To get over this we require Typecasting
     print(album.getPerformance())
@@ -94,7 +94,7 @@ for album in allAlbums1 {
     print(studioAlbum)
 }
 
-/// Here we can pull out paramters from within the subclass
+/// Here we can pull out parameters from within the subclass
 print("\n")
 for album in allAlbums1 {
     print(album.getPerformance())

@@ -11,7 +11,7 @@ var emailCompaniesAccessibilityArray = emailCompaniesAccessibility.replacingOccu
 /// Get customer email
 var emailEntered = "danny@gmail.com"
 
-/// Loop email companies that dont read out correctly and replace
+/// Loop email companies that don't read out correctly and replace
 var count = 0
 for _ in emailCompaniesArray {
     print("\(count) \(emailCompaniesArray[count])")

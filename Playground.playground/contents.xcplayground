@@ -10,12 +10,10 @@
         <page name='closure-PassAsParameter'/>
         <page name='closureAsCompletionHandler'/>
         <page name='CompletionHandler_Block'/>
-        <page name='displayUIComponents'/>
         <page name='filterArray'/>
         <page name='FunctionAsVarOrLet'/>
         <page name='FunctionParams-ExternalInternal'/>
         <page name='functionWithInitialValueSet'/>
-        <page name='ifElseInParameterTernaryOperator'/>
         <page name='ifLet'/>
         <page name='inOut'/>
         <page name='map-compactMap-flatMap'/>
