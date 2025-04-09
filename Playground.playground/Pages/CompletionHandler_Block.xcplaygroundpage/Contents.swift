@@ -6,6 +6,26 @@ PlaygroundPage.current.needsIndefiniteExecution = true  // Code to make asynchro
 /// A Completion Handler (or Completion Block) is a block of code that will be executed after the main task is completed!
 
 /// ************************************************************************************************************************************
+/// Completion Handler in its simplest form
+/// ************************************************************************************************************************************
+// 1. Create a function that uses a Completion Handler
+func functionWithCompletionHandler(completion: @escaping (String) -> Void) {
+    // 3. Code is executed
+    let textString: String = "Hello, World!"
+    // 4. "completion()" is called passing the string as that is the required parameter type "(String) -> Void"
+    completion(textString)
+}
+
+// 2. Code Calls a function that has a Completion Handler
+functionWithCompletionHandler { anyNameToRepresentAParameterYouExpectFromTheCompletionHandler in
+    // 5. "completion()" from the called function provides "textString"
+    print(anyNameToRepresentAParameterYouExpectFromTheCompletionHandler)
+}
+/// ====================================================================================================================================
+///
+/// ====================================================================================================================================
+
+/// ************************************************************************************************************************************
 /// 01: SampleFunction1 will run the two print statements in the wrong order due to the time delay of the DispatchQueue
 /// ************************************************************************************************************************************
 //func sampleFunction1() {
