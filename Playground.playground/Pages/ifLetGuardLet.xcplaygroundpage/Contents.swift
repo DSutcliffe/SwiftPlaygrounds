@@ -19,11 +19,11 @@ func getTextFieldData(input: String? = nil) {
         print("If Let Data IS NIL and continues through function")
     }
     
-    nextFunction()
+    nextFunction(input: dataGuardLet)
 }
 
-func nextFunction() {
-    print("Moved to next function")
+func nextFunction(input: String) {
+    print("Moved to next function based on input: \(input)")
 }
 
 getTextFieldData(input: "Text Field Input")
